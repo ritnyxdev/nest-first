@@ -4,6 +4,7 @@ import { BuildersController } from "./builders.controller";
 import { BuildersService } from "./builders.service";
 import { BuildersSchema, Builders } from "./schemas/builders.schema";
 
+// @Global()
 @Module({
     imports: [
         MongooseModule.forFeature([
@@ -12,5 +13,6 @@ import { BuildersSchema, Builders } from "./schemas/builders.schema";
     ],
     controllers: [BuildersController],
     providers: [BuildersService],
+    exports: [BuildersService],
 })
 export class BuildersModule {}

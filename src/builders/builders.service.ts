@@ -36,4 +36,7 @@ export class BuildersService {
     async deleteOne(id: string): Promise<Builders> {
         return this.buildersModel.findByIdAndDelete(id);
     }
+    async getAllBuilders(id: string): Promise<Builders[]> {
+        return this.buildersModel.find({ company_id: id });
+    }
 }
